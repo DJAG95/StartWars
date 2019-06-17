@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+	{%load staticfiles %}
+	<link rel="stylesheet" href="{% static 'estilos/films.css' %}">
+			
+{% endblock %}
+
+{% block cuerpo %}
+<section>
+	<h1 class="Title">Películas</h1>
+	<ul>
+	{% for f in lista_films.results %}
+			<li>{{f.title}}</li>
+	{% endfor %}
+	</ul>
+	<h1> Total películas: {{lista_films.count}}</h1>
+</section>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+	{%load staticfiles %}
+	<link rel="stylesheet" href="{% static 'estilos/index.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+
+{% block cuerpo %}
+<section>
+	<img class="bgimg" src="{% static 'img\background.jpg' %}" />
+
+	<h1 class="TitleForce">Que la fuerza te acompañe</h1>
+	<form method="post" class="Form container">
+		{% csrf_token %}
+    	{{ form|crispy }}
+    	<div class="botones">
+            <input type="submit" name="button" class="btn-success btn btnSucces" value="Enviar">
+        </div>
+	</form>
+</section>
+<section class="Carrusel container-fluid">
+	<hr>
+<div id="characters" class="carousel slide" data-ride="carousel">	
+	<ul class="carousel-indicators">
+	   <li data-target="#characters" data-slide-to="0" class="active"></li>
+	   <li data-target="#characters" data-slide-to="1"></li>
+	   <li data-target="#characters" data-slide-to="2"></li>
+	   <li data-target="#characters" data-slide-to="3"></li>
+	</ul>
+	  
+	  <!-- The slideshow -->
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img src="{% static 'img/LUKE.jpg' %}" alt="Luke" width="1100" height="500">
+	    </div>
+	    <div class="carousel-item">
+	      <img src="{% static 'img/CHEWBACCA.jpg' %}" alt="Chewbacca" width="1100" height="500">
+	    </div>
+	    <div class="carousel-item">
+	      <img src="{% static 'img/KYLO.jpg' %}" alt="Kilo ren" width="1100" height="500">
+	    </div>
+	    <div class="carousel-item">
+	      <img src="{% static 'img/r2d2.jpg' %}" alt="r2d2" width="1100" height="500">
+	    </div>
+	  </div>
+	  
+	  <!-- Left and right controls -->
+	  <a class="carousel-control-prev" href="#characters" data-slide="prev">
+	    <span class="carousel-control-prev-icon"></span>
+	  </a>
+	  <a class="carousel-control-next" href="#characters" data-slide="next">
+	    <span class="carousel-control-next-icon"></span>
+	  </a>
+</div>
+
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{% endblock %}
