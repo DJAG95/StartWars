@@ -1,0 +1,31 @@
+*{
+  	font-family: 'Helvetica';
+	
+}
+
+.filmBox{
+	margin-top: 10%;
+	padding: 3%;
+	text-align: center;
+	background-color: rgb(18,18,18);
+	border-radius: 10px;
+	color: white;
+   align-items:center;
+}
+
+.filmBox p{
+	text-align: justify;
+	font-size: 20px;
+}
+.filmBox h5, .filmBox h6{
+	text-align: left;
+}
+
+.filmBox img{
+	width: 200;
+	height: 400px;
+}
+
+.content{
+	margin-top: 2%;
+}

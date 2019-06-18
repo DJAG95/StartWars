@@ -1,9 +1,9 @@
 from django.db import models
 
 class Searched(models.Model):
-	id_Film = models.CharField(max_length = 2)
-	date = models.DateField()
+	id_Film_Visited = models.CharField(max_length = 2)
+	date = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return 'Api utilizada: '+self.ApiURL+' Fecha de inserción: '+self.date
+		return 'Película : '+self.id_Film_Visited+' Fecha de inserción: '+self.date.__str__()
 

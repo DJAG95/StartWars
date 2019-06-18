@@ -1,3 +1,9 @@
 from django.contrib import admin
+from django import forms
+from django.db import models
+from wars.models import Searched
 
-# Register your models here.
+class ejemplarStacked(admin.StackedInline):
+	model = Searched
+
+admin.site.register(Searched)

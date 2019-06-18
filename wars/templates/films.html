@@ -2,6 +2,8 @@
 {% block head %}
 	{%load staticfiles %}
 	<link rel="stylesheet" href="{% static 'estilos/films.css' %}">
+	<link rel="stylesheet" href="{% static 'estilos/film.css' %}">
+
 			
 {% endblock %}
 
@@ -9,10 +11,22 @@
 <section>
 	<h1 class="Title">Películas</h1>
 	<ul>
-	{% for f in lista_films.results %}
-			<li>{{f.title}}</li>
+	{% for film in lista_films.results %}
+		<div class="container filmBox">
+			<h1 class="Title">{{film.title}} - Episodio {{film.episode_id}}</h1>
+			<div class="content row">
+				<img src="/static/img/portadas/{{film.episode_id}}.jpg" class="col-md-4">
+				<div class="col-md-8">
+					<h5>Director - {{film.director}}</h5>
+					<h5>Productores - {{film.producer}}</h5>
+					<h6>Fecha de lanzamiento - {{film.release_date}}</h6>
+					<hr>
+					<p >{{film.opening_crawl}}</p>
+				</div>
+			</div>
+		</div>
 	{% endfor %}
 	</ul>
-	<h1> Total películas: {{lista_films.count}}</h1>
+	<h1 class="Title"> Total películas: {{lista_films.count}}</h1>
 </section>
 {% endblock %}
